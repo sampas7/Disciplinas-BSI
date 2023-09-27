@@ -133,8 +133,60 @@ public class ListaCircular {
 
             // copiar para L1 o resultado de L3
 
+            ListaCircular L3 = new ListaCircular ();
+            
+            Celula atual1 = this.primeira;
+            Celula atual2 = L2.primeira;
+            
+            // Insere enquanto tem a mesma quantidade de elementos
+            do {
+                L3.adiciona(atual1.getElemento()); // add L1
+                L3.adiciona((atual2.getElemento())); // add L2
+                
+                atual1 = atual1.getProxima();
+                atual2 = atual2.getProxima();
+            } while ((atual1 != this.primeira) && (atual2 != L2.primeira));
+
+           // L1 Ainda tem elementos
+            while (atual1 != this.primeira) {
+                L3.adiciona(atual1.getElemento());
+                atual1 = atual1.getProxima();
+            }
+            
+           // L2 Ainda tem elementos
+            while (atual2 != L2.primeira) {
+                L3.adiciona(atual2.getElemento());
+                atual2 = atual2.getProxima();
+            }
+            
+            // Copiar de L3 auxiliar para L1 onde deve estar a resposta
+            this.primeira = L3.primeira;
+            this.ultima = L3.ultima;
+            this.totalDeElementos = L3.totalDeElementos;
+
         }
 
+    }
+
+    /* 4.6 - Intercalar Lista - Sem utilizar a lista auxiliar L3 */
+    public void intercala2(ListaCircular L2){
+
+        // situação 1 - listas 1 e 2 vazias
+        if(this.totalDeElementos == 0 && L2.totalDeElementos == 0){
+            // Nada é feito
+        }
+        
+        // situação 2 - lista 1 cheia e lista 2 vazia
+        else if(this.totalDeElementos > 0 && L2.totalDeElementos == 0){
+            // Nada é feito
+        }
+        
+        // situação 3 - lista 1 vazia e lista 2 cheia
+        else if(this.totalDeElementos == 0 && L2.totalDeElementos > 0){
+            this.primeira = L2.primeira;
+            this.ultima = L2.ultima;
+            this.totalDeElementos = L2.totalDeElementos;
+        }
     }
 
     /* 4.7 - Imprimir lista */
@@ -185,9 +237,13 @@ public class ListaCircular {
         l2.adiciona(b3);
         System.out.println(l2);
 
-        l2.concatena(l1);
+        /*l2.concatena(l1);
         System.out.println(l2);
-        System.out.println(l2.tamanho());
+        System.out.println(l2.tamanho());*/
+
+        l1.intercalaLista(l2);
+        System.out.println(l1);
+        System.out.println(l1.tamanho());
 
         /*
          * lista.remove();
