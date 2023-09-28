@@ -133,32 +133,32 @@ public class ListaCircular {
 
             // copiar para L1 o resultado de L3
 
-            ListaCircular L3 = new ListaCircular ();
-            
+            ListaCircular L3 = new ListaCircular();
+
             Celula atual1 = this.primeira;
             Celula atual2 = L2.primeira;
-            
+
             // Insere enquanto tem a mesma quantidade de elementos
             do {
                 L3.adiciona(atual1.getElemento()); // add L1
                 L3.adiciona((atual2.getElemento())); // add L2
-                
+
                 atual1 = atual1.getProxima();
                 atual2 = atual2.getProxima();
             } while ((atual1 != this.primeira) && (atual2 != L2.primeira));
 
-           // L1 Ainda tem elementos
+            // L1 Ainda tem elementos
             while (atual1 != this.primeira) {
                 L3.adiciona(atual1.getElemento());
                 atual1 = atual1.getProxima();
             }
-            
-           // L2 Ainda tem elementos
+
+            // L2 Ainda tem elementos
             while (atual2 != L2.primeira) {
                 L3.adiciona(atual2.getElemento());
                 atual2 = atual2.getProxima();
             }
-            
+
             // Copiar de L3 auxiliar para L1 onde deve estar a resposta
             this.primeira = L3.primeira;
             this.ultima = L3.ultima;
@@ -169,23 +169,67 @@ public class ListaCircular {
     }
 
     /* 4.6 - Intercalar Lista - Sem utilizar a lista auxiliar L3 */
-    public void intercala2(ListaCircular L2){
+    public void intercala2(ListaCircular L2) {
 
         // situação 1 - listas 1 e 2 vazias
-        if(this.totalDeElementos == 0 && L2.totalDeElementos == 0){
+        if (this.totalDeElementos == 0 && L2.totalDeElementos == 0) {
             // Nada é feito
         }
-        
+
         // situação 2 - lista 1 cheia e lista 2 vazia
-        else if(this.totalDeElementos > 0 && L2.totalDeElementos == 0){
+        else if (this.totalDeElementos > 0 && L2.totalDeElementos == 0) {
             // Nada é feito
         }
-        
+
         // situação 3 - lista 1 vazia e lista 2 cheia
-        else if(this.totalDeElementos == 0 && L2.totalDeElementos > 0){
+        else if (this.totalDeElementos == 0 && L2.totalDeElementos > 0) {
             this.primeira = L2.primeira;
             this.ultima = L2.ultima;
             this.totalDeElementos = L2.totalDeElementos;
+        }
+
+        // situação 4 - listas 1 e 2 cheias
+        else if (this.totalDeElementos > 0 && L2.totalDeElementos > 0) {
+            Celula atual = this.primeira;
+            Celula aux1 = this.primeira;
+            Celula aux2 = L2.primeira;
+
+            while (atual != this.ultima & atual != L2.ultima) {
+                // Bloco L1
+                aux1 = atual.getProxima();
+                atual.setProxima(aux2);
+                aux1.setAnterior(aux2);
+                aux2.setAnterior(atual);
+
+                atual = atual.getProxima();
+
+                // Bloco L2 - não pode ser o último elemento
+                if (atual != L2.ultima) {
+                    aux2 = atual.getProxima();
+                    atual.setProxima(aux1);
+                    atual.setAnterior(aux1);
+
+                    atual = atual.getProxima();
+                }
+            }
+
+            // Final da L1 -> ainda tem elementos na L2
+            if (atual == this.ultima) {
+                atual.setProxima(aux2);
+                this.ultima = L2.ultima;
+            }
+
+            // Final da L2 -> ainda tem elementos em L1
+            if (atual == L2.ultima) {
+                atual.setProxima(aux1);
+            }
+
+            // Fazer circular
+            this.primeira.setAnterior(this.ultima);
+            this.ultima.setProxima(primeira);
+
+            // somar elementos
+            this.totalDeElementos += L2.totalDeElementos;
         }
     }
 
@@ -237,11 +281,19 @@ public class ListaCircular {
         l2.adiciona(b3);
         System.out.println(l2);
 
-        /*l2.concatena(l1);
-        System.out.println(l2);
-        System.out.println(l2.tamanho());*/
+        /*
+         * l2.concatena(l1);
+         * System.out.println(l2);
+         * System.out.println(l2.tamanho());
+         */
 
-        l1.intercalaLista(l2);
+        /*
+         * l1.intercalaLista(l2);
+         * System.out.println(l1);
+         * System.out.println(l1.tamanho());
+         */
+
+        l1.intercala2(l2);
         System.out.println(l1);
         System.out.println(l1.tamanho());
 
