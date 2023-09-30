@@ -1,3 +1,3 @@
 ## Breve Explicação
 
-'Objetos' foi a segunda versão de lista utilizando **array** (Lista Linear), mas ao invés de guardar alunos, dessa vez o que seria guardado eram objetos, mais uma vez diferentes funções foram implemntadas.
+Uma 'ListaCircular' é um tipo de lista ligada na qual a última célula da lista está ligada a primeiro célula, formando um ciclo contínuo. Em outras palavras, a última célula aponta para o primeira da lista, assim como a primeira célula irá ter como referência a última célula como célula anterior.
