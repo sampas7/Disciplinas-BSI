@@ -1,0 +1,92 @@
+/* Importa a fonte Chakra Petch do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    background-color: #9d00ff;
+    width: 1480px;
+    
+
+}
+
+
+body {
+    font-family: "Space Grotesk", sans-serif; /* Define a fonte padrão */
+    background-color: #DDDDDD; /* Cor de fundo da página */
+    background-size: cover;
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+    margin: 0px;
+
+
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+  
+  nav li {
+    margin: 0 10px;
+}
+  
+  nav a {
+    font-size: 2.0rem; /* Tamanho da fonte */
+    color: #04ff00; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-bottom: 25px;
+    text-decoration: none;
+}
+
+.imagemtopo {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    text-align: center;
+    width: 1480px  ;
+    height: 270px   ;
+    overflow: hidden; /* Para esconder a parte da imagem que ultrapassa o contêiner */
+    object-fit: cover;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    
+}
+
+h1 {
+    font-size: 2.5rem; /* Tamanho da fonte */
+    color: #04ff00; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-bottom: 25px;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    list-style:none;
+
+}
+
+footer p {
+    background-color: #DDDDDD;
+    background-size: cover;
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
