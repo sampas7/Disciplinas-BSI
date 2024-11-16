@@ -9,7 +9,7 @@ header {
     justify-content: center;
     text-align: center;
     background-color: #9d00ff;
-    width: 1479px;
+    width: 100%;
 
 }
 
@@ -54,7 +54,7 @@ nav ul {
     flex-direction: column;
     margin: 0;
     text-align: center;
-    width: 1480px  ;
+    width: 1479px;
     height: 270px   ;
     overflow: hidden;
     object-fit: cover;
@@ -69,7 +69,7 @@ main {
 }
 
 
-h1 {
+h1, h3 {
     font-size: 2rem; 
     color: #f31111; 
     text-align: center; 
@@ -80,17 +80,12 @@ h1 {
 }
 
 h3 {
-    font-size: 2.3rem; 
     color: #000000; 
-    text-align: center; 
-    margin-bottom: 25px;
-    margin-top: 25px;
-    font-family: "Space Grotesk", sans-serif;
 
 }
 
 .imagem-personagem {
-    margin-top: ;
+    margin-top: 25px;
     width: 200px;
     height: 200px;
     object-fit: cover;
