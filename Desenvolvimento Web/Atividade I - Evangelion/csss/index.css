@@ -1,30 +1,33 @@
-/* Importa a fonte Chakra Petch do Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 header {
+    font-family: "Space Grotesk", sans-serif;
     display: flex;
+    position: top;
     flex-direction: row;
     justify-content: center;
     text-align: center;
     background-color: #9d00ff;
-    width: 1480px;
-    
+    width: 1479px;
 
 }
 
 
 body {
-    font-family: "Space Grotesk", sans-serif; /* Define a fonte padrão */
-    background-color: #DDDDDD; /* Cor de fundo da página */
+    font-family: "Inter", sans-serif; 
+    background-color: #DDDDDD; 
     background-size: cover;
-    display: flex; /* Usa Flexbox para layout */
-    flex-direction: column; /* Alinha os itens na vertical */
-    align-items: center; /* Centraliza os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens verticalmente */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
     margin: 0px;
-
+    font-size: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
 }
+
 
 nav ul {
     list-style: none;
@@ -39,9 +42,9 @@ nav ul {
 }
   
   nav a {
-    font-size: 2.0rem; /* Tamanho da fonte */
-    color: #04ff00; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
+    font-size: 2.0rem;
+    color: #04ff00;
+    text-align: center;
     margin-bottom: 25px;
     text-decoration: none;
 }
@@ -53,7 +56,7 @@ nav ul {
     text-align: center;
     width: 1480px  ;
     height: 270px   ;
-    overflow: hidden; /* Para esconder a parte da imagem que ultrapassa o contêiner */
+    overflow: hidden;
     object-fit: cover;
 }
 
@@ -62,31 +65,62 @@ main {
     flex-direction: column;
     justify-content: center;
     margin-left: auto;
-    
+
 }
 
+
 h1 {
-    font-size: 2.5rem; /* Tamanho da fonte */
-    color: #04ff00; /* Cor do texto */
-    text-align: center; /* Alinha o texto ao centro */
+    font-size: 2rem; 
+    color: #f31111; 
+    text-align: center; 
     margin-bottom: 25px;
+    margin-top: 25px;
+    font-family: "Space Grotesk", sans-serif;
+
+}
+
+h3 {
+    font-size: 2.3rem; 
+    color: #000000; 
+    text-align: center; 
+    margin-bottom: 25px;
+    margin-top: 25px;
+    font-family: "Space Grotesk", sans-serif;
+
+}
+
+.imagem-personagem {
+    margin-top: ;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
 }
 
 ul {
+    list-style-type: disc;
     display: flex;
     flex-direction: column;
-    list-style:none;
 
 }
 
-footer p {
-    background-color: #DDDDDD;
+p {
+    margin-left: 5px;
+
+}
+
+footer em {
+    font-family: "Space Grotesk", sans-serif;
+    background-color: rgba(157, 0, 255, 0.5);
+    height: 50px;
+    width: 1480px;
     background-size: cover;
     display: flex;
     flex-direction: center;
     align-items: center;
     justify-content: center;
-
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    
 }
 
 
