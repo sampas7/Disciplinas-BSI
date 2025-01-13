@@ -2,6 +2,8 @@ public class Celula {
 
     private Celula proxima;
 
+    private Celula anterior;
+
     private Object elemento;
 
     public Celula(Celula proxima, Object elemento) {
@@ -24,6 +26,14 @@ public class Celula {
 
     }
 
+    public Celula getAnterior() {
+        return anterior;
+
+    }
+    public void setAnterior(Celula anterior) {
+        this.anterior = anterior;
+
+    }
 
     public Object getElemento() {
         return elemento;
